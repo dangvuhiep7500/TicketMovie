@@ -15,4 +15,8 @@
         android:id="@+id/user"
         android:icon="@drawable/user"
         android:title="THÔNG TIN" />
+    <item
+        android:id="@+id/phimlive"
+        android:icon="@drawable/user"
+        android:title="Phim" />
 </menu>

@@ -3,6 +3,7 @@ package com.example.ticketmovie.movieapp.activities;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.telephony.SmsManager;
@@ -16,6 +17,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -26,6 +28,8 @@ import com.example.lib.RetrofitClient;
 import com.example.ticketmovie.R;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.Locale;
 import java.util.Properties;
 
@@ -47,7 +51,7 @@ public class ChangeActivity extends AppCompatActivity {
     Methods methods;
     Button btnchange;
     TextInputLayout inputpass;
-    public static final String BASE_URL = "https://bookingmovieticket.azurewebsites.net";
+    public static final String BASE_URL = "https://bookingmovie20220329183802.azurewebsites.net";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +73,7 @@ public class ChangeActivity extends AppCompatActivity {
                 alertDialog.setIcon(R.drawable.notification_icon);
                 alertDialog.setMessage("Bạn có muốn lưu các thay đổi?");
                 alertDialog.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.O)
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String pass = txtMatKhauCu.getText().toString();
@@ -123,20 +128,22 @@ public class ChangeActivity extends AppCompatActivity {
 //        });
 //    }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void btnChange() {
 //        String sms="Bạn đã đổi mật khẩu TicketMovie";
 //        SmsManager smsManager = SmsManager.getDefault();
 //        smsManager.sendTextMessage(SignInActivity.user.getSdt().toString().trim(),null
 //                ,sms,null,null);
+        String mkc= Base64.getEncoder().encodeToString(txtMatKhauCu.getText().toString().getBytes());
         methods = RetrofitClient.getRetrofit(BASE_URL).create(Methods.class);
-        if(!txtMatKhauCu.getText().toString().equals(SignInActivity.user.getMatKhau().toString())){
+        if(!mkc.equals(SignInActivity.user.getMatKhau().toString())){
             Toast.makeText(ChangeActivity.this, "Mật khẩu không chính xác", Toast.LENGTH_SHORT).show();
         }else {
             if(!txtMatKhauMoi.getText().toString().equals(txtNhapLai.getText().toString())){
                 Toast.makeText(ChangeActivity.this, "Mật khẩu không khớp với nhau", Toast.LENGTH_SHORT).show();
             }else {
-               SignInActivity.user.setMatKhau(txtMatKhauMoi.getText().toString());
-                Call<User> call = methods.ChangePasswWord(SignInActivity.user.getIdUser(),txtMatKhauMoi.getText().toString());
+               SignInActivity.user.setMatKhau(Base64.getEncoder().encodeToString(txtMatKhauMoi.getText().toString().getBytes()));
+                Call<User> call = methods.ChangePasswWord(SignInActivity.user.getIdUser(),Base64.getEncoder().encodeToString(txtMatKhauMoi.getText().toString().getBytes()));
                 call.enqueue(new Callback<User>() {
                     @Override
                     public void onResponse(Call<User> call, Response<User> response) {

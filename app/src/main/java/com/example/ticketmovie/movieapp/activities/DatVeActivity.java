@@ -40,7 +40,7 @@ import retrofit2.Response;
 public class DatVeActivity extends AppCompatActivity {
     Methods methods;
     List<ChiTietChoNgoi> chiTietChoNgois = new ArrayList<ChiTietChoNgoi>();
-    public static final String BASE_URL = "https://bookingmovie.azurewebsites.net";
+    public static final String BASE_URL = "https://bookingmovie20220329183802.azurewebsites.net";
     TextView soghe;
     GridView gridView;
     ChiTietChoNgoiAdapter chiTietChoNgoiAdapter = null;

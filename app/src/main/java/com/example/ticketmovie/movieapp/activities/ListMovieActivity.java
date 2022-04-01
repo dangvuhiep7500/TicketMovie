@@ -35,7 +35,7 @@ public class ListMovieActivity extends Fragment {
     List<PhimModel> phimModelList = new ArrayList<PhimModel>();
     ListView listView;
     ItemAdapter itemsAdapter = null;
-    public static final String BASE_URL = "https://bookingmovieticket.azurewebsites.net";
+    public static final String BASE_URL = "https://bookingmovie20220329183802.azurewebsites.net";
     View mview;
     HomeActivity mainActivity;
     @Override
