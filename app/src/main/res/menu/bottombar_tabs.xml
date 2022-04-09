@@ -12,11 +12,11 @@
         android:icon="@drawable/courthouse"
         android:title="VÉ LƯU" />
     <item
+        android:id="@+id/phimlive"
+        android:icon="@drawable/movie"
+        android:title="Phim" />
+    <item
         android:id="@+id/user"
         android:icon="@drawable/user"
         android:title="THÔNG TIN" />
-    <item
-        android:id="@+id/phimlive"
-        android:icon="@drawable/user"
-        android:title="Phim" />
 </menu>
