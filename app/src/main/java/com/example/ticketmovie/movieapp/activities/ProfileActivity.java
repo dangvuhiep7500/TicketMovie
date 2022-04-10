@@ -37,7 +37,7 @@ public class ProfileActivity extends Fragment {
     Methods methods;
     Button btnchangepass;
     Button btnDangXuat;
-    public static final String BASE_URL = "https://bookingmovieticket.azurewebsites.net";
+    public static final String BASE_URL = "https://bookingmovie20220329183802.azurewebsites.net";
     public ProfileActivity() {
         // Required empty public constructor
     }

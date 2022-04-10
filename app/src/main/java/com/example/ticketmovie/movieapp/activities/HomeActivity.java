@@ -43,6 +43,9 @@ public class HomeActivity extends AppCompatActivity {
                             bottomNavigationView.getMenu().findItem(R.id.veluu).setChecked(true);
                         break;
                     case 2:
+                        bottomNavigationView.getMenu().findItem(R.id.phimlive).setChecked(true);
+
+                    case 3:
                         bottomNavigationView.getMenu().findItem(R.id.user).setChecked(true);
 
                         break;
@@ -60,16 +63,20 @@ public class HomeActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.trangchu:
                         viewPager.setCurrentItem(0);
-
                         break;
+
                     case R.id.veluu:
                         viewPager.setCurrentItem(1);
                         break;
-                    case R.id.user:
 
+                    case R.id.phimlive:
                         viewPager.setCurrentItem(2);
-
                         break;
+
+                    case R.id.user:
+                        viewPager.setCurrentItem(3);
+                        break;
+
                 }
                 return true;
             }

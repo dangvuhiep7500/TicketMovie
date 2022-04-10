@@ -1,8 +1,10 @@
 package com.example.ticketmovie.movieapp.activities;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -12,6 +14,9 @@ import com.example.lib.InterfaceRepository.Methods;
 import com.example.lib.Model.User;
 import com.example.lib.RetrofitClient;
 import com.example.ticketmovie.R;
+
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,7 +30,7 @@ public class SignInActivity extends AppCompatActivity {
     public static User user;
     String u;
     String p;
-    public static final String BASE_URL = "https://bookingmovieticket.azurewebsites.net";
+    public static final String BASE_URL = "https://bookingmovie20220329183802.azurewebsites.net";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,10 +40,12 @@ public class SignInActivity extends AppCompatActivity {
         methods = RetrofitClient.getRetrofit(BASE_URL).create(Methods.class);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void dangnhap(View view) {
         u= edtUserName.getText().toString();
         p= edtPassword.getText().toString();
-        Call<User> userCall= methods.getUser(u,p);
+        String pe= Base64.getEncoder().encodeToString(p.getBytes());
+        Call<User> userCall= methods.getUser(u,pe);
         userCall.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import com.example.ticketmovie.movieapp.activities.PhimLiveActivity;
 import com.example.ticketmovie.movieapp.activities.ProfileActivity;
 import com.example.ticketmovie.movieapp.activities.ListLuuVeActivity;
 import com.example.ticketmovie.movieapp.activities.ListMovieActivity;
@@ -24,6 +25,8 @@ public class ViewCinemaTicket extends FragmentStatePagerAdapter {
             case 1:
                 return new ListLuuVeActivity();
             case 2:
+                return new PhimLiveActivity();
+            case 3:
                 return new ProfileActivity();
             default:
                 return new ListMovieActivity();
@@ -33,6 +36,6 @@ public class ViewCinemaTicket extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 }

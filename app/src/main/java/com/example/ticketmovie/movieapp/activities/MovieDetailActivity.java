@@ -35,7 +35,7 @@ import retrofit2.Response;
 public class MovieDetailActivity extends AppCompatActivity {
 
     private Methods cmethods;
-    public static final String BASE_URL = "https://bookingmovie.azurewebsites.net";
+    public static final String BASE_URL = "https://bookingmovie20220329183802.azurewebsites.net";
     TextView txttenphim;
     TextView txttheloai;
     TextView txttime;

@@ -37,6 +37,7 @@ public class User implements Serializable {
     @SerializedName("ves")
     @Expose
     private List<Ve> ves = null;
+    private List<ChiTietPhimLive> chiTietPhimLives= null;
 
     public Integer getIdUser() {
         return idUser;
@@ -94,4 +95,11 @@ public class User implements Serializable {
         this.ves = ves;
     }
 
+    public List<ChiTietPhimLive> getChiTietPhimLives() {
+        return chiTietPhimLives;
+    }
+
+    public void setChiTietPhimLives(List<ChiTietPhimLive> chiTietPhimLives) {
+        this.chiTietPhimLives = chiTietPhimLives;
+    }
 }

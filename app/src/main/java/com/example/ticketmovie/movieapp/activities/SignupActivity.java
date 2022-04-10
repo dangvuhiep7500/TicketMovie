@@ -1,8 +1,10 @@
 package com.example.ticketmovie.movieapp.activities;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -16,13 +18,17 @@ import com.example.lib.InterfaceRepository.Methods;
 import com.example.lib.Model.User;
 import com.example.lib.RetrofitClient;
 import com.example.ticketmovie.R;
+import com.sun.mail.util.BASE64EncoderStream;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 
 public class SignupActivity extends AppCompatActivity {
     EditText edtFullname;
@@ -33,7 +39,7 @@ public class SignupActivity extends AppCompatActivity {
     Button adduser;
     Methods methods;
     List<User> userList = new ArrayList<User>();
-    public static final String BASE_URL = "https://bookingmovieticket.azurewebsites.net";
+    public static final String BASE_URL = "https://bookingmovie20220329183802.azurewebsites.net";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +66,7 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
         adduser.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
                 String name = edtFullname.getText().toString();
@@ -105,10 +112,12 @@ public class SignupActivity extends AppCompatActivity {
 
         });
     }
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void AddUser() {
-
+        String pass= edtPassword.getText().toString();
+        String passe= Base64.getEncoder().encodeToString(pass.getBytes());
         User user= new User(edtFullname.getText().toString(),Diachi.getText().toString(),
-                phone.getText().toString(),edtUsername.getText().toString(),edtPassword.getText().toString());
+                phone.getText().toString(),edtUsername.getText().toString(),passe);
         methods.postUser(user).enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
