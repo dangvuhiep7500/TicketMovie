@@ -3,6 +3,7 @@ package com.example.lib.InterfaceRepository;
 import com.example.lib.Model.ChiTietChieu;
 import com.example.lib.Model.ChiTietChoNgoi;
 import com.example.lib.Model.Item;
+import com.example.lib.Model.PhimLive;
 import com.example.lib.Model.PhimModel;
 import com.example.lib.Model.Theloai;
 import com.example.lib.Model.User;
@@ -66,4 +67,7 @@ public interface Methods {
 
     @GET("/api/Ve/{idChoNgoi}/{idChiTietChieu}")
     Call<Ve> getvechoNgoi(@Path("idChoNgoi") Integer IDChoNgoi, @Path("idChiTietChieu") Integer IDChiTietChieu);
+
+    @GET("/api/PhimLive")
+    Call<List<PhimLive>> getPhimLive();
 }

@@ -25,9 +25,9 @@ public class ViewCinemaTicket extends FragmentStatePagerAdapter {
             case 1:
                 return new ListLuuVeActivity();
             case 2:
-                return new ProfileActivity();
-            case 3:
                 return new PhimLiveActivity();
+            case 3:
+                return new ProfileActivity();
             default:
                 return new ListMovieActivity();
         }
