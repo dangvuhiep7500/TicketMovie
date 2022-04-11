@@ -30,6 +30,7 @@ public class PhimLiveActivity  extends Fragment {
     Methods methods;
     List<PhimLive> phimLiveList = new ArrayList<PhimLive>();
     ListView listView;
+    public static final String BASE_URL = "https://bookingmovie20220329183802.azurewebsites.net";
     PhimLiveAdapter itemsAdapter = null;
     View mview;
     HomeActivity mainActivity;
@@ -38,7 +39,7 @@ public class PhimLiveActivity  extends Fragment {
         super.onCreate(savedInstanceState);
         mainActivity = (HomeActivity) getActivity();
         mview= inflater.inflate(R.layout.activity_phimlive, container, false);
-        methods = RetrofitClient.getRetrofit(null).create(Methods.class);
+        methods = RetrofitClient.getRetrofit(BASE_URL).create(Methods.class);
         listView = mview.findViewById(R.id.listView);
         itemsAdapter = new PhimLiveAdapter(mainActivity, R.layout.item_movie_phimlive);
         Call<List<PhimLive>> call = methods.getPhimLive();

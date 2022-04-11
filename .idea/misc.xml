@@ -32,6 +32,7 @@
         <entry key="..\:/TicketMovie/app/src/main/res/layout/book_ticket_movie.xml" value="0.33" />
         <entry key="..\:/TicketMovie/app/src/main/res/layout/cancel_ticket.xml" value="0.3625" />
         <entry key="..\:/TicketMovie/app/src/main/res/layout/change_pass.xml" value="0.36666666666666664" />
+        <entry key="..\:/TicketMovie/app/src/main/res/layout/chitiet_phimlive_dadat.xml" value="0.3875" />
         <entry key="..\:/TicketMovie/app/src/main/res/layout/fragment_item.xml" value="0.20520833333333333" />
         <entry key="..\:/TicketMovie/app/src/main/res/layout/fragment_item_list.xml" value="0.20520833333333333" />
         <entry key="..\:/TicketMovie/app/src/main/res/layout/information_movie_fragment.xml" value="0.3625" />
@@ -40,6 +41,7 @@
         <entry key="..\:/TicketMovie/app/src/main/res/layout/item_movie_phimlive.xml" value="0.3875" />
         <entry key="..\:/TicketMovie/app/src/main/res/layout/item_xuatchieu.xml" value="0.36666666666666664" />
         <entry key="..\:/TicketMovie/app/src/main/res/layout/list_movie.xml" value="0.36666666666666664" />
+        <entry key="..\:/TicketMovie/app/src/main/res/layout/list_phimlive_dadat.xml" value="0.3875" />
         <entry key="..\:/TicketMovie/app/src/main/res/layout/list_veluu.xml" value="0.36666666666666664" />
         <entry key="..\:/TicketMovie/app/src/main/res/layout/locations_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/TicketMovie/app/src/main/res/layout/logged_out.xml" value="0.36666666666666664" />

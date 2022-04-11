@@ -35,7 +35,7 @@ public class ListMovieActivity extends Fragment {
     List<PhimModel> phimModelList = new ArrayList<PhimModel>();
     ListView listView;
     ItemAdapter itemsAdapter = null;
-   // public static final String BASE_URL = "https://bookingmovie20220329183802.azurewebsites.net";
+   public static final String BASE_URL = "https://bookingmovie20220329183802.azurewebsites.net";
     View mview;
     HomeActivity mainActivity;
     @Override
@@ -44,7 +44,7 @@ public class ListMovieActivity extends Fragment {
         mainActivity = (HomeActivity) getActivity();
         super.onCreate(savedInstanceState);
         mview= inflater.inflate(R.layout.movie_home_fragment, container, false);
-        methods = RetrofitClient.getRetrofit(null).create(Methods.class);
+        methods = RetrofitClient.getRetrofit(BASE_URL).create(Methods.class);
         listView = mview.findViewById(R.id.listView);
         itemsAdapter = new ItemAdapter(mainActivity, R.layout.item_movie);
         Call<List<PhimModel>> call = methods.getPhim();

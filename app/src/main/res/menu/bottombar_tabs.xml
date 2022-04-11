@@ -14,7 +14,11 @@
     <item
         android:id="@+id/phimlive"
         android:icon="@drawable/movie"
-        android:title="Phim" />
+        android:title="PHIM LIVE" />
+    <item
+        android:id="@+id/vephimlive"
+        android:icon="@drawable/courthouse"
+        android:title="VÉ PHIM LIVE" />
     <item
         android:id="@+id/user"
         android:icon="@drawable/user"

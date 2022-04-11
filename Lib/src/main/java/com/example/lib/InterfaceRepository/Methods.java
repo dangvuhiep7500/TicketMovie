@@ -2,12 +2,14 @@ package com.example.lib.InterfaceRepository;
 
 import com.example.lib.Model.ChiTietChieu;
 import com.example.lib.Model.ChiTietChoNgoi;
+import com.example.lib.Model.ChiTietPhimLive;
 import com.example.lib.Model.Item;
 import com.example.lib.Model.PhimLive;
 import com.example.lib.Model.PhimModel;
 import com.example.lib.Model.Theloai;
 import com.example.lib.Model.User;
 import com.example.lib.Model.Ve;
+import com.example.lib.Model.videoLiveStream;
 
 import java.util.List;
 
@@ -20,6 +22,7 @@ import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -70,4 +73,10 @@ public interface Methods {
 
     @GET("/api/PhimLive")
     Call<List<PhimLive>> getPhimLive();
+
+//    @GET("/api/ChiTietPhimLive/{id}")
+//    Call<ChiTietPhimLive> getIdChitietphimlive(@Path("id") Integer chitietphimlive);
+
+    @GET("/youtube/v3/search?channelId=UCj44nJYuTWLRkYpHDjX2X_A&type=video&key=AIzaSyD0e6QxhG9gpedKkgQt7LUKOeM7xKkJuBE")
+    Call<videoLiveStream> getLiveStream();
 }

@@ -44,10 +44,12 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case 2:
                         bottomNavigationView.getMenu().findItem(R.id.phimlive).setChecked(true);
-
+                        break;
                     case 3:
+                        bottomNavigationView.getMenu().findItem(R.id.vephimlive).setChecked(true);
+                        break;
+                    case 4:
                         bottomNavigationView.getMenu().findItem(R.id.user).setChecked(true);
-
                         break;
                 }
             }
@@ -73,8 +75,12 @@ public class HomeActivity extends AppCompatActivity {
                         viewPager.setCurrentItem(2);
                         break;
 
-                    case R.id.user:
+                    case R.id.vephimlive:
                         viewPager.setCurrentItem(3);
+                        break;
+
+                    case R.id.user:
+                        viewPager.setCurrentItem(4);
                         break;
 
                 }
