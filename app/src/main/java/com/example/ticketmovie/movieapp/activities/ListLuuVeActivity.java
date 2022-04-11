@@ -42,7 +42,7 @@ public class ListLuuVeActivity extends Fragment {
     List<Ve> VeID= new ArrayList<Ve>();
     ListView listView = null;
     ItemLuuVeAdapter itemsAdapter = null;
-    public static final String BASE_URL = "https://bookingmovieticket.azurewebsites.net";
+    public static final String BASE_URL = "https://bookingmovie20220329183802.azurewebsites.net";
     View mview;
     HomeActivity mainActivity;
     @Override

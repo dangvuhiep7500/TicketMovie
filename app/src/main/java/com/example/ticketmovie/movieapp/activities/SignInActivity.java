@@ -57,7 +57,6 @@ public class SignInActivity extends AppCompatActivity {
                 }else{
                     Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
                     startActivity(intent);
-
                     Toast.makeText(SignInActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                 }
             }
