@@ -1,13 +1,16 @@
 package com.example.ticketmovie.movieapp.activities;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.example.lib.InterfaceRepository.Methods;
@@ -41,6 +44,21 @@ public class PhimLiveActivity  extends Fragment {
         mview= inflater.inflate(R.layout.activity_phimlive, container, false);
         methods = RetrofitClient.getRetrofit(BASE_URL).create(Methods.class);
         listView = mview.findViewById(R.id.listView);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(getContext());
+                alertDialog.setTitle("Thông báo");
+                alertDialog.setIcon(R.drawable.notification_icon);
+                alertDialog.setMessage("Bạn có muốn đặt vé phim này không?");
+                alertDialog.setPositiveButton("có", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+            }
+        });
         itemsAdapter = new PhimLiveAdapter(mainActivity, R.layout.item_movie_phimlive);
         Call<List<PhimLive>> call = methods.getPhimLive();
         call.enqueue(new Callback<List<PhimLive>>() {

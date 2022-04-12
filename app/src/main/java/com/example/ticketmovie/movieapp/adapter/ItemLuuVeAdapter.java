@@ -30,7 +30,7 @@ public class ItemLuuVeAdapter extends ArrayAdapter<Ve> {
     int resource;
     Methods methods;
     ChiTietChieu c;
-    public static final String BASE_URL = "https://bookingmovie.azurewebsites.net";
+    public static final String BASE_URL = "https://bookingmovie20220329183802.azurewebsites.net";
     public ItemLuuVeAdapter(@NonNull Context context, int resource){
         super(context, resource);
         this.activity= (Activity) context;

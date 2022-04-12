@@ -66,7 +66,7 @@
                             android:text="Tên phim:   "
                             android:textSize="25dp" />
                         <TextView
-                            android:id="@+id/txttenphim1"
+                            android:id="@+id/txttenphimlive"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Madagascar 2"
@@ -91,7 +91,7 @@
                             android:textSize="25dp"
                             android:textStyle="bold" />
                         <TextView
-                            android:id="@+id/txttheloai"
+                            android:id="@+id/txttheloailive"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Cartoon / Adventure"
@@ -118,7 +118,7 @@
                                 />
 
                             <TextView
-                                android:id="@+id/txttime"
+                                android:id="@+id/txttimelive"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="18:00"

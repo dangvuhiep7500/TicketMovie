@@ -62,7 +62,7 @@ public class ListLuuVeActivity extends Fragment {
                 alertDialog.setIcon(R.drawable.notification_icon);
                 alertDialog.setMessage("Bạn có muốn hủy vé này không?");
                 Integer ve = VeID.get(position).getIdVe();
-                alertDialog.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                alertDialog.setPositiveButton( "Có", new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 

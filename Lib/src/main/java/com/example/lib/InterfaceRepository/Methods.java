@@ -74,8 +74,12 @@ public interface Methods {
     @GET("/api/PhimLive")
     Call<List<PhimLive>> getPhimLive();
 
-//    @GET("/api/ChiTietPhimLive/{id}")
-//    Call<ChiTietPhimLive> getIdChitietphimlive(@Path("id") Integer chitietphimlive);
+    @GET("/api/ChiTietPhimLive/{id}")
+    Call<ChiTietPhimLive> getIdChitietphimlive(@Path("id") Integer chitietphimlive);
+
+    @GET("/api/ChiTietPhimLive")
+    Call<List<ChiTietPhimLive>> getChitietphimlive();
+
 
     @GET("/youtube/v3/search?channelId=UCj44nJYuTWLRkYpHDjX2X_A&type=video&key=AIzaSyD0e6QxhG9gpedKkgQt7LUKOeM7xKkJuBE")
     Call<videoLiveStream> getLiveStream();
